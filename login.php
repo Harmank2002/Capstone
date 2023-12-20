@@ -8,16 +8,16 @@ if (session_status() == PHP_SESSION_NONE) {
 <?php
 include 'navbar.php';
 
-// Database connection details
+
 $servername = "phulmoonshoots.com";
 $username = "harmanjeet";
 $password = "semicoloN.1984";
 $dbname = "signups";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -26,20 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Check if the username and password match a record in the database
     $sql = "SELECT * FROM signups WHERE username = '$username' AND pass = '$password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $_SESSION["username"] = $username; // Save the username in the session
-        header("Location: reviewform.php"); // Redirect to welcome page
+        $_SESSION["username"] = $username; 
+        header("Location: reviewform.php"); 
         exit();
     } else {
         echo "Invalid username or password";
     }
 }
 
-// Close the database connection
 $conn->close();
 ?>
 
@@ -49,7 +47,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- Link to the styles.css file -->
+  
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
