@@ -1,5 +1,5 @@
 <?php
-// Start the session if it hasn't been started
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
     
@@ -25,7 +25,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <h3>Click below to get started</h3>
 
         <div class="about-buttons">
-            <!-- You can adjust the link or button behavior based on your requirements -->
+       
             <a href="./signup.php">
                 <button class="button">Get Started</button>
             </a>
