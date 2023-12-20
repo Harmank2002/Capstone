@@ -1,5 +1,5 @@
 <?php
-// Start the session if it hasn't been started
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Add some basic styling for the navbar */
+       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -47,10 +47,10 @@ if (session_status() == PHP_SESSION_NONE) {
     
     <?php
     if (isset($_SESSION["username"])) {
-        // User is logged in
+       
         echo '<a class="logout" href="logout.php">Logout</a>';
     } else {
-        // User is not logged in
+        
         echo '<a href="login.php">Login</a>';
         echo '<a href="signup.php">Sign Up</a>';
     }
