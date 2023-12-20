@@ -1,16 +1,16 @@
 <?php
-// Start the session if it hasn't been started
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if the user is not logged in
+
 if (!isset($_SESSION["username"])) {
-    echo "Not logged in. Redirecting to login.php..."; // Debug statement
+    echo "Not logged in. Redirecting to login.php..."; 
     header("Location: login.php");
     exit();
 } else {
-    echo "Logged in as: " . $_SESSION["username"]; // Debug statement
+    echo "Logged in as: " . $_SESSION["username"]; 
 }
 ?>
 
